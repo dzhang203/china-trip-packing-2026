@@ -59,7 +59,7 @@ function readPackedState() {
 function updateProgress() {
   const checked = packInputs.filter((input) => input.checked).length;
   const total = packInputs.length;
-  progressLabel.textContent = `${checked} of ${total} packed`;
+  progressLabel.textContent = window.ZUZU_I18N?.progress(checked, total) || `${checked} of ${total} packed`;
   progressBar.style.width = total ? `${(checked / total) * 100}%` : '0%';
 }
 
@@ -75,7 +75,8 @@ packInputs.forEach((input) => {
 updateProgress();
 
 document.querySelector('#reset-list')?.addEventListener('click', () => {
-  if (!window.confirm('Clear every checked packing item?')) return;
+  const message = window.ZUZU_I18N?.t('Clear every checked packing item?') || 'Clear every checked packing item?';
+  if (!window.confirm(message)) return;
   packInputs.forEach((input) => { input.checked = false; });
   localStorage.removeItem(storageKey);
   Object.keys(packedState).forEach((key) => delete packedState[key]);
@@ -128,3 +129,5 @@ function renderCarSeats() {
 }
 
 renderCarSeats();
+
+document.addEventListener('zuzu:languagechange', updateProgress);

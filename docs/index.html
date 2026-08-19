@@ -11,6 +11,7 @@
     <title>Zuzu Goes East — Taiwan & China 2026</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="data.js" defer></script>
+    <script src="i18n.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -26,12 +27,18 @@
           </span>
         </a>
 
-        <nav class="tab-list" role="tablist" aria-label="Trip guide sections">
-          <button class="tab-button" id="tab-overview" role="tab" aria-selected="true" aria-controls="overview" data-tab="overview">Overview</button>
-          <button class="tab-button" id="tab-packing" role="tab" aria-selected="false" aria-controls="packing" data-tab="packing" tabindex="-1">Packing list</button>
-          <button class="tab-button" id="tab-countries" role="tab" aria-selected="false" aria-controls="countries" data-tab="countries" tabindex="-1">Country guide</button>
-          <button class="tab-button" id="tab-car-seat" role="tab" aria-selected="false" aria-controls="car-seat" data-tab="car-seat" tabindex="-1">Car-seat shop</button>
-        </nav>
+        <div class="header-controls">
+          <nav class="tab-list" role="tablist" aria-label="Trip guide sections">
+            <button class="tab-button" id="tab-overview" role="tab" aria-selected="true" aria-controls="overview" data-tab="overview">Overview</button>
+            <button class="tab-button" id="tab-packing" role="tab" aria-selected="false" aria-controls="packing" data-tab="packing" tabindex="-1">Packing list</button>
+            <button class="tab-button" id="tab-countries" role="tab" aria-selected="false" aria-controls="countries" data-tab="countries" tabindex="-1">Country guide</button>
+            <button class="tab-button" id="tab-car-seat" role="tab" aria-selected="false" aria-controls="car-seat" data-tab="car-seat" tabindex="-1">Car-seat shop</button>
+          </nav>
+          <div class="language-toggle" role="group" aria-label="Language">
+            <button type="button" data-language="en" aria-pressed="true">EN</button>
+            <button type="button" data-language="zh" aria-pressed="false">中文</button>
+          </div>
+        </div>
       </div>
     </header>
 
