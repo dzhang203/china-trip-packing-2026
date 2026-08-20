@@ -80,8 +80,8 @@ python3 -m http.server 8000 --directory docs
 
 Then open `http://localhost:8000` and check:
 
-- all four tabs by mouse and keyboard;
-- direct hashes such as `#packing` and `#car-seat`;
+- all five tabs by mouse and keyboard;
+- direct hashes such as `#packing`, `#flight`, and `#car-seat`;
 - checklist persistence after refresh, Reset, and Print;
 - mobile width around 375 px;
 - the car-seat table’s horizontal scroll;

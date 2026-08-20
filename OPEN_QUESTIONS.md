@@ -32,18 +32,23 @@ Choose one of these outcomes after research and a packed-size comparison:
 
 ### Current direction
 
-The website currently treats the Graco Contender Slim as the comfort-first model to audition and the Cosco Scenera Extend as the lighter fallback. This is provisional, not a completed purchase recommendation.
+The refreshed Maxi-Cosi Romi CC402 is now the front-runner. It appears to offer the best balance of Zuzu comfort, 9.2 lb carry weight, and easy lower-anchor installation. The Cosco Scenera Extend remains the weight-saving fallback; Safety 1st Smooth Ride is the closest lower-cost Romi-like alternative. This is still provisional until the family completes the fit, seat-belt-installation, vehicle-space, and carry tests.
+
+When shopping, verify the exact model. The current generation is CC402 (black SKU CC402HHH). Listings that say 7.8 lb or forward-facing 22–40 lb are describing the older CC228 generation, even if the retailer page simply says “Romi.”
 
 ### Questions to continue
 
 - Which current rear-facing seats best match the family’s priority order: child comfort, ease of packing and carrying, then ease of installation?
 - How does Zuzu fit and react during a real sit test in the leading candidates?
+- Does the Romi’s crotch-buckle, thigh, shoulder, and head-pillow fit remain comfortable for at least 30 minutes?
+- Does the Romi’s fixed rear-facing recline fit behind a front seat in the small vehicles likely to be encountered?
 - Can either finalist fit in the family’s actual luggage, or attach conveniently to a suitcase, stroller, or luggage cart?
 - What are the exact packed dimensions, shell shape, and practical airport-carry options?
 - How reliably can David and Luna install each candidate rear-facing with unfamiliar vehicle seat belts?
 - How do the candidates work with airplane lap belts, and what are the policies and seat dimensions of every operating airline on the itinerary?
 - Are there newly available 2026 models that improve comfort or installation without creating an unacceptable carry burden?
 - Are manufacturer stock, manuals, certification labels, recalls, and independent test results current for each candidate?
+- Can the retailer confirm CC402 on the box, a recent manufacture date, and a return policy that permits a careful indoor fit trial?
 - Can the final candidate be checked with a certified Child Passenger Safety Technician before departure?
 
 ### Decision needed

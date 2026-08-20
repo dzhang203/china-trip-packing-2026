@@ -14,6 +14,14 @@ function activateTab(id, updateHash = true) {
     panel.hidden = panel.id !== next.dataset.tab;
   });
 
+  const tabList = next.parentElement;
+  if (tabList.scrollWidth > tabList.clientWidth) {
+    tabList.scrollTo({
+      left: next.offsetLeft - (tabList.clientWidth - next.offsetWidth) / 2,
+      behavior: 'smooth'
+    });
+  }
+
   if (updateHash) history.replaceState(null, '', `#${next.dataset.tab}`);
   window.scrollTo({ top: 0, behavior: 'auto' });
 }
@@ -41,7 +49,10 @@ document.querySelectorAll('[data-open-tab], [data-tab-link]').forEach((control) 
 });
 
 const initialTab = window.location.hash.slice(1);
-if (initialTab) activateTab(initialTab, false);
+if (initialTab) {
+  activateTab(initialTab, false);
+  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));
+}
 
 const storageKey = 'zuzu-packing-checklist-v1';
 const packInputs = [...document.querySelectorAll('[data-pack]')];
