@@ -400,6 +400,11 @@
     'Pack light. Travel gently. Have fun.': '轻装出发，慢慢旅行，尽情玩乐。',
     'Prepared for David, Luna & Zuzu · Sources checked August 19, 2026': '为 David、Luna 和祖祖准备 · 资料核查于 2026 年 8 月 19 日',
     'Clear every checked packing item?': '清除所有已勾选的打包项目吗？',
+    'Edit list': '编辑清单', 'Done editing': '完成编辑', 'Restore defaults': '恢复默认',
+    'Edit item': '编辑项目', 'Delete item': '删除项目', 'Add item': '新增项目',
+    'Packing item name': '打包项目名称', 'New packing item': '新的打包项目',
+    'Save': '保存', 'Cancel': '取消', 'Add': '添加',
+    'Restore the default packing list? Custom items and item name edits will be removed.': '恢复默认打包清单吗？自定义项目和名称修改都会被移除。',
 
     'Strongest signal: plush head/body inserts, cushioned pad, and two recline positions. Zuzu still decides.': '最强信号：柔软头部/身体衬垫、缓冲坐垫及两个倾角。最终仍由祖祖决定。',
     '16 lb · 18.9 × 21.5 × 24.75 in. Use a backpack bag or luggage cart; suitcase fit must be proven.': '16 磅 · 18.9 × 21.5 × 24.75 英寸。使用双肩收纳袋或行李车；能否装箱必须实测。',

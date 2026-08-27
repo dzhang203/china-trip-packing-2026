@@ -41,6 +41,8 @@ Copy an existing checkbox label in `index.html` and give `data-pack` a new, uniq
 
 If the checklist meaning changes incompatibly, bump `storageKey` in `app.js` from `zuzu-packing-checklist-v1` to `v2`. That intentionally starts everyone with a clean checklist.
 
+Visitor-created items, deleted defaults, and per-language item-name edits are stored separately under `zuzu-packing-customization-v1`. The “Restore defaults” action clears those customizations without resetting checks on the remaining default items. Keep section numbers stable so saved custom items return to the same checklist card.
+
 ### Add a tab
 
 1. Add a tab button with matching `aria-controls`, `data-tab`, and panel `id`.
@@ -74,6 +76,7 @@ Run from the repository root:
 
 ```sh
 node --check docs/data.js
+node --check docs/i18n.js
 node --check docs/app.js
 python3 -m http.server 8000 --directory docs
 ```

@@ -122,6 +122,7 @@ h3 { margin: 0 0 .55rem; line-height: 1.15; letter-spacing: -.025em; }
 .progress-track span { display: block; width: 0; height: 100%; background: var(--gold); border-radius: inherit; transition: width .3s ease; }
 .progress-actions { display: flex; gap: .5rem; }.progress-actions button { min-height: 38px; padding: .45rem .8rem; color: white; background: transparent; border-color: rgba(255,255,255,.22); font-size: .8rem; }
 .progress-actions button:hover { background: rgba(255,255,255,.08); }
+.progress-actions button[hidden], .pack-add-form[hidden] { display: none !important; }
 .packing-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; padding-block: 4rem 2rem; align-items: start; }
 .packing-rule { position: sticky; top: 178px; padding: 1.6rem; background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 36px rgba(38,50,45,.07); }
 .packing-rule > strong { display: block; font-family: Georgia, serif; font-size: 1.75rem; line-height: 1.05; }.packing-rule > p:not(.kicker) { color: var(--ink-2); }
@@ -131,10 +132,25 @@ h3 { margin: 0 0 .55rem; line-height: 1.15; letter-spacing: -.025em; }
 .checklist-card.must-carry { background: #f4dfb5; }
 .checklist-heading { display: grid; grid-template-columns: 38px 1fr; gap: .7rem; margin-bottom: 1rem; }.checklist-heading > span { color: var(--orange); font-family: Georgia, serif; font-size: 1.05rem; }.checklist-heading h2 { margin-bottom: .15rem; font-size: 1.6rem; }.checklist-heading p { margin: 0; color: var(--ink-2); font-size: .82rem; }
 .checklist { display: grid; gap: .2rem; }
-.checklist label { display: grid; grid-template-columns: 22px 1fr; gap: .65rem; align-items: start; padding: .55rem .35rem; border-radius: 8px; cursor: pointer; font-size: .9rem; }
-.checklist label:hover { background: rgba(78,136,123,.07); }
-.checklist input { appearance: none; width: 18px; height: 18px; margin: .12rem 0 0; border: 1.5px solid var(--jade); border-radius: 5px; background: rgba(255,255,255,.72); cursor: pointer; }
-.checklist input:checked { background: var(--jade); box-shadow: inset 0 0 0 3px white; }.checklist label:has(input:checked) { color: rgba(21,59,55,.45); text-decoration: line-through; }
+.pack-item-row { display: grid; grid-template-columns: 22px minmax(0,1fr) auto; gap: .65rem; align-items: start; padding: .55rem .35rem; border-radius: 8px; font-size: .9rem; }
+.pack-item-row:hover { background: rgba(78,136,123,.07); }
+.pack-item-text { min-width: 0; cursor: pointer; }
+.pack-item-row input[type="checkbox"] { appearance: none; width: 18px; height: 18px; margin: .12rem 0 0; border: 1.5px solid var(--jade); border-radius: 5px; background: rgba(255,255,255,.72); cursor: pointer; }
+.pack-item-row input[type="checkbox"]:checked { background: var(--jade); box-shadow: inset 0 0 0 3px white; }
+.pack-item-row:has(input[type="checkbox"]:checked) .pack-item-text { color: rgba(21,59,55,.45); text-decoration: line-through; }
+.pack-item-actions { display: none; gap: .25rem; margin-top: -.2rem; }
+.packing-edit-mode .pack-item-actions { display: flex; }
+.pack-item-actions button { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line); border-radius: 50%; color: var(--ink-2); background: rgba(255,255,255,.72); cursor: pointer; font-size: 1rem; line-height: 1; }
+.pack-item-actions button:hover { color: white; background: var(--orange); border-color: var(--orange); }
+.pack-item-removed { display: none !important; }
+.pack-item-row.is-editing .pack-item-text, .pack-item-row.is-editing .pack-item-actions { display: none; }
+.pack-inline-editor { grid-column: 2 / -1; display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: .4rem; }
+.pack-inline-editor input, .pack-add-form input { min-width: 0; padding: .5rem .65rem; border: 1px solid var(--jade); border-radius: 9px; color: var(--ink); background: white; }
+.pack-inline-editor button, .pack-add-controls button { padding: .48rem .68rem; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: white; cursor: pointer; font-size: .78rem; font-weight: 750; }
+.pack-inline-editor button[type="submit"], .pack-add-form button[type="submit"] { color: white; background: var(--jade); border-color: var(--jade); }
+.pack-add-controls { display: none; margin-top: .9rem; padding-top: .8rem; border-top: 1px dashed var(--line); }
+.packing-edit-mode .pack-add-controls { display: block; }
+.pack-add-form { display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: .4rem; }
 .micro-note { margin: 1rem 0 0; color: var(--ink-2); font-size: .76rem; }
 .buy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-block: 2rem 7rem; }
 .buy-card { padding: 1.7rem; border-radius: var(--radius); }.buy-card.local { background: var(--jade-light); }.buy-card.home { background: #f4dfb5; }.buy-card.skip { background: #f2d8cd; }
@@ -203,9 +219,9 @@ h3 { margin: 0 0 .55rem; line-height: 1.15; letter-spacing: -.025em; }
 }
 
 @media print {
-  body { background: white; color: black; }.site-header, .site-footer, .progress-wrap, .packing-rule, .buy-grid, .page-heading, .checklist-card .micro-note { display: none !important; }
+  body { background: white; color: black; }.site-header, .site-footer, .progress-wrap, .packing-rule, .buy-grid, .page-heading, .checklist-card .micro-note, .pack-item-actions, .pack-add-controls, .pack-inline-editor { display: none !important; }
   .tab-panel { display: none !important; } #packing { display: block !important; }
-  .packing-layout { display: block; padding: 0; width: 100%; }.checklist-columns { columns: 2; }.checklist-card { border-color: #aaa; break-inside: avoid; padding: 12px; }.checklist label { padding: 3px; font-size: 9pt; }.checklist-heading h2 { font-size: 14pt; }.checklist input { border-color: #333; }
+  .packing-layout { display: block; padding: 0; width: 100%; }.checklist-columns { columns: 2; }.checklist-card { border-color: #aaa; break-inside: avoid; padding: 12px; }.pack-item-row { padding: 3px; font-size: 9pt; }.checklist-heading h2 { font-size: 14pt; }.pack-item-row input[type="checkbox"] { border-color: #333; }
 }
 
 @media (prefers-reduced-motion: reduce) {
